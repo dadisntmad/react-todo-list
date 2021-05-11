@@ -1,0 +1,78 @@
+.todo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #F6F9FB;
+  width: 750px;
+  height: 650px;
+}
+
+h1 {
+  text-align: center;
+  color: #424242;
+  font-size: 36px;
+  margin: 24px 0 24px 0;
+}
+
+.form {
+  max-width: 350px;
+  margin: 0 auto;
+
+  input {
+    width: 100%;
+  }
+
+  div {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+}
+
+.tasks {
+  overflow: auto;
+  height: 60vh;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 500px;
+  background: #fff;
+  margin: 24px auto;
+  padding: 14px 0 14px 16px;
+  border-radius: 7px;
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    margin-right: 24px;
+  }
+
+  &__edit {
+    svg {
+      fill: #a9a9a9;
+      transition: .3s all;
+      cursor: pointer;
+
+      &:hover {
+        fill: #000000;
+      }
+    }
+  }
+
+  &__delete {
+    margin-left: 12px;
+
+    svg {
+      fill: #a9a9a9;
+      transition: .3s all;
+      cursor: pointer;
+
+      &:hover {
+        fill: #ff0000;
+      }
+    }
+  }
+}
