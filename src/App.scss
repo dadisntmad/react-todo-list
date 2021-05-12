@@ -6,6 +6,7 @@
   background: #F6F9FB;
   width: 750px;
   height: 650px;
+  border-radius: 10px;
 }
 
 h1 {
@@ -19,19 +20,62 @@ h1 {
   max-width: 350px;
   margin: 0 auto;
 
+  span {
+    color: #ffffff;
+  }
+
   input {
     width: 100%;
+    margin-bottom: 12px;
+    padding: 8px;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    transition: .3s all;
+
+    &:focus {
+      border: 1px solid #000000;
+    }
   }
 
   div {
     text-align: center;
     margin-bottom: 24px;
+    cursor: pointer;
+    background: #0575F3;
+    padding: 5px;
+    border-radius: 5px;
+    transition: .3s all;
+
+    &:hover {
+      background: darken(#0575F3, 10%);
+    }
   }
 }
 
 .tasks {
   overflow: auto;
   height: 60vh;
+
+  &__add {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    background: #0575F3;
+    padding: 15px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: .3s all;
+
+    &:hover {
+      background: darken(#0575F3, 10%);
+    }
+
+    svg {
+      fill: #ffffff;
+    }
+  }
 }
 
 .task {
@@ -72,6 +116,46 @@ h1 {
 
       &:hover {
         fill: #ff0000;
+      }
+    }
+  }
+}
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #00000052;
+}
+
+.modal__container {
+  z-index: 10;
+  position: relative;
+  width: 35vw;
+  height: 20vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px #302e2e12;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+
+  &-button {
+    align-self: flex-end;
+    cursor: pointer;
+
+    svg {
+      fill: #a9a9a9;
+      transition: .3s all;
+
+      &:hover {
+        fill: #000000;
       }
     }
   }
