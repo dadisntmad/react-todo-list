@@ -1,6 +1,16 @@
 import React from 'react';
 
 const Modal = ({onAddTask, onTextChange, text, onVisibleModal}) => {
+
+    const onEnterPress = (e) => {
+        if (e.key === 'Enter' || e.keyCode === 13) {
+            e.preventDefault();
+            onAddTask();
+        } else {
+            return false;
+        }
+    };
+
     return (
         <div className="modal">
             <div className="modal__container">
@@ -15,6 +25,7 @@ const Modal = ({onAddTask, onTextChange, text, onVisibleModal}) => {
                         placeholder="Walk a dog"
                         value={text}
                         onChange={onTextChange}
+                        onKeyPress={onEnterPress}
                     />
                     <div onClick={onAddTask}><span>ADD</span></div>
                 </form>

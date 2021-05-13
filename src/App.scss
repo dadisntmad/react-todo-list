@@ -1,9 +1,23 @@
+::-webkit-scrollbar {
+  height: 10px;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a1a1a1;
+  border-radius: 7px;
+
+  &:hover {
+    background: #909090;
+  }
+}
+
 .todo {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #F6F9FB;
+  background: #e4eff7;
   width: 750px;
   height: 650px;
   border-radius: 10px;
@@ -84,9 +98,39 @@ h1 {
   align-items: center;
   max-width: 500px;
   background: #fff;
-  margin: 24px auto;
+  margin: 0 auto 24px;
   padding: 14px 0 14px 16px;
   border-radius: 7px;
+
+  &__text {
+    overflow: auto;
+    margin: 0px 24px 0 0;
+  }
+
+  &__text-edit {
+    position: relative;
+    width: 370px;
+
+    input {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #a9a9a9;
+      font-size: 15px;
+      padding: 0 36px 0 0;
+    }
+
+    svg {
+      position: absolute;
+      right: 0;
+      fill: #a9a9a9;
+      transition: .3s all;
+      cursor: pointer;
+
+      &:hover {
+        fill: #4bcc00;
+      }
+    }
+  }
 
   &__buttons {
     display: flex;
@@ -134,7 +178,7 @@ h1 {
 .modal__container {
   z-index: 10;
   position: relative;
-  width: 35vw;
+  width: 20vw;
   height: 20vh;
   top: 50%;
   left: 50%;

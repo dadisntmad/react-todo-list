@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import {Tasks} from './components';
+import Tasks from "./components/Tasks";
 
 function App() {
     return (
